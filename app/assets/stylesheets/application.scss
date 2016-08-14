@@ -23,6 +23,27 @@
   color: darkred;
 }
 
-.margin10 {
+.cocktail-div {
+  border: 1px solid darkgrey;
   margin: 10px;
+}
+
+.margin10{
+  margin: 10px;
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
+}
+img:hover{
+  opacity: 0.8;
+}
+
+.center {
+    display:block;
+    width:200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

@@ -1,7 +1,7 @@
 <div class="text-center">
   <h1><%= @cocktail.name %></h1>
 
-  <p><strong>Ingrédients</strong></p>
+  <p><h3>Ingredients</h3></p>
   <% @cocktail.doses.each do |dose| %>
     <ul class="list-unstyled">
       <li>
@@ -24,7 +24,7 @@
 
     <%= f.input :description, placeholder: "12 leaves, 25 cl, ..." %>
     <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose an ingredient!" %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit, "Add ingredient" , class: "btn btn-primary" %>
   <% end %>
 
   <%= cl_image_tag @cocktail.photo.url(:standard), :class => "margin10" %>
