@@ -22,11 +22,16 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def edit #----------------------------------------------------------
+    puts "===== EDIT  ======"
+  end
+
   def update #--------------------------------------------------------
-    if @restaurant.update(cocktail_params)
+    puts "===== Update  ======"
+    if @cocktail.update(cocktail_params)
       redirect_to cocktail_path(@cocktail)
     else
-      render :edit
+      render :index
     end
   end
 
@@ -44,7 +49,9 @@ class CocktailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cocktail_params
-      params.require(:cocktail).permit(:name)
+      #params.require(:cocktail).permit(:name, :photo)
+      # Using fetch, as it's possible no photo was given at creation
+      params.fetch(:cocktail, {}).permit(:name, :photo, :photo_cache)
     end
 
 end

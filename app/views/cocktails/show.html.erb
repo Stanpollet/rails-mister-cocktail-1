@@ -27,6 +27,8 @@
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 
+  <%= cl_image_tag @cocktail.photo.url(:standard), :class => "margin10" %>
+  <br>
   <%= link_to 'Back', cocktails_path %>
 </div>
 

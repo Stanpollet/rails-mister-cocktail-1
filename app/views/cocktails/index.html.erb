@@ -7,7 +7,8 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail,:class=>"minilink" %></td>
+        <td><%= link_to 'Show', cocktail, :class=>"minilink" %></td>
+        <td><%= link_to 'Edit', edit_cocktail_path(cocktail.id), :class=>"minilink" %></td>
         <td><%= link_to "Delete", cocktail, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"minilink red"%>
         </td>
       </tr>
